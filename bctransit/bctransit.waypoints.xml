@@ -30,7 +30,9 @@
                     xml = <waypoints/>;
                     
                 for each ( var p in query.results.p ) {
-                    xml.waypoints += <waypoint>{p.text()}</waypoint>;
+                    xml.waypoints += <waypoint>
+                        <title>{p.text()}</title>
+                    </waypoint>;
                 }
                     
                 response.object = xml;
