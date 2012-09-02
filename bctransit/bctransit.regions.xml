@@ -28,11 +28,13 @@
                     xml = <regions/>;
                 
                 for each ( var option in query.results.option ) {
-                    var id = regex.exec( option.@value )[1],
+                    var id = query.results.option.indexOf( option ),
+                        path = regex.exec( option.@value )[1],
                         title = option.text();
                     
                     xml.regions += <region>
                         <id>{id}</id>
+                        <path>{path}</path>
                         <title>{title}</title>
                     </region>;
                 }
