@@ -29,13 +29,15 @@
                     }),
                 
                     xml = <routes/>;
-                
-                for each ( var a in query.results.a ) {
-                    var id = regex.exec( a.@href )[1],
+
+                for ( var i = 0, j = query.results.a; i < j; i++ ) {
+                    var a = query.results.a[ i ],
+                        path = regex.exec( a.@href )[1],
                         title = a.text();
-                
+
                     xml.routes += <route>
-                        <id>{id}</id>
+                        <id>{i}</id>
+                        <path>{path}</path>
                         <title>{title}</title>
                     </route>;
                 }
