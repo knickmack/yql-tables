@@ -30,13 +30,13 @@
                 
                     xml = <routes/>;
 
-                for ( var i = 0, j = query.results.a.length(); i < j; i++ ) {
-                    var a = query.results.a[ i ],
+                for each (var a in query.results.a) {
+                    var uuid = y.crypto.uuid(),
                         path = regex.exec( a.@href )[1],
                         title = a.text();
 
                     xml.routes += <route>
-                        <id>{i}</id>
+                        <id>{uuid}</id>
                         <path>{path}</path>
                         <title>{title}</title>
                     </route>;
