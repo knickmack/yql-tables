@@ -27,7 +27,7 @@
                     
                     xml = <regions/>;
 
-                for each (var option in query.results.option) {
+                for each ( var option in query.results.option ) {
                     var uuid = y.crypto.uuid(),
                         path = regex.exec( option.@value )[1],
                         title = option.text();
