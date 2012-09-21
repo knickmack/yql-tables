@@ -20,7 +20,7 @@
                     regex = /\/regions\/([a-z]{3})\/.*$/i,
                     
                     query = y.query( statement, {
-                        url: "http://www.bctransit.com/",
+                        url: request.url,
                         xpath: '//select[@name="jumplist"]/option',
                         regex: regex.source
                     }),
