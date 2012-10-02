@@ -28,12 +28,10 @@
                     xml = <regions/>;
 
                 for each ( var option in query.results.option ) {
-                    var uuid = y.crypto.uuid(),
-                        path = regex.exec( option.@value )[1],
+                    var path = regex.exec( option.@value )[1],
                         title = option.text();
 
                     xml.regions += <region>
-                        <id>{uuid}</id>
                         <path>{path}</path>
                         <title>{title}</title>
                     </region>;
